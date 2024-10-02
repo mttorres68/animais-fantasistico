@@ -1,7 +1,7 @@
 import ScrollSuave from './modules/scroll-suave.js';
 import initAnimacaoScroll from './modules/scroll-animacao.js';
 import TabNav from './modules/tabnav.js';
-import initModal from './modules/modal.js';
+import Modal from './modules/modal.js';
 import initTooltip from './modules/tooltip.js';
 import initDropdownMenu from './modules/dropdown-menu.js';
 import initMenuMobile from './modules/menu-mobile.js';
@@ -17,13 +17,18 @@ const tabContent = '[data-tab="content"] section';
 const tabMenu = '[data-tab="menu"] li';
 const tabNav = new TabNav(tabMenu, tabContent);
 
+const openButton = '[data-modal="abrir"]';
+const closedButton = '[data-modal="fechar"]';
+const containerModal = '[data-modal="container"]';
+const modal = new Modal(openButton, closedButton, containerModal);
+
 
 accordion.init();
 scrollSuave.init();
 tabNav.init();
+modal.init();
 
 initAnimacaoScroll();
-initModal();
 initTooltip();
 initDropdownMenu();
 initMenuMobile();
